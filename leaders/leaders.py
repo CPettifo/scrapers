@@ -10,8 +10,8 @@ response = requests.get(
 
 soup = BeautifulSoup(response.content, 'html.parser')
 
-title = soup.find(id="firstHeading")
+title = soup.find('table',{'class':"wikitable"})
 
-print(title.string)
+print(title)
 
 print("Response status code: " + str(response.status_code))
