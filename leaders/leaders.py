@@ -1,13 +1,17 @@
 try:
-    from googlesearch import search
+    import requests
+    from bs4 import BeautifulSoup
 except ImportError:
-    print("You need the google and beautifulsoup4 pip modules")
+    print("You need the requests and beautifulsoup4 pip modules")
 
-# Take a parameter of country
-# country = "whatever country"
+response = requests.get(
+    url="https://en.wikipedia.org/wiki/List_of_current_heads_of_state_and_government"
+)
 
-# Perform a google search for "leader of <country>"
-query = "Who is the leader of australia?"
+soup = BeautifulSoup(response.content, 'html.parser')
 
-for j in search(query, tld = "co.in", num = 1, stop = 10, pause = 2):
-    print(j)
+title = soup.find(id="firstHeading")
+
+print(title.string)
+
+print("Response status code: " + str(response.status_code))
