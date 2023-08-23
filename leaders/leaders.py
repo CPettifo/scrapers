@@ -16,7 +16,7 @@ table = soup.find('table',{'class':"wikitable"})
 df = pd.read_html(str(table))
 df=pd.DataFrame(df[0])
 
-row = str(df.loc[df.index[35]])
+row = str(df.loc[df.index[8]])
 
 
 split = row.split('\n')
