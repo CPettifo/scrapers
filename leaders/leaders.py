@@ -16,6 +16,14 @@ table = soup.find('table',{'class':"wikitable"})
 df = pd.read_html(str(table))
 df=pd.DataFrame(df[0])
 
-print(str(df.loc[df.index[12]]))
+row = str(df.loc[df.index[12]])
+
+split = row.split('\n')
+
+state_split = split[0].split(' ')
+
+state = state_split[len(state_split) - 1]
+
+print(state)
 
 print("Response status code: " + str(response.status_code))
