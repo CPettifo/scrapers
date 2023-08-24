@@ -3,7 +3,8 @@ try:
     from bs4 import BeautifulSoup
     import pandas as pd
 except ImportError:
-    print("You need the requests and beautifulsoup4 pip modules, oh yeah and pandas")
+    print("You need the requests and beautifulsoup4 pip modules, oh yeah and pandas\nTo install these requirements execute the command below in a terminal.\n" 
+          +"pip install -r requirements.txt")
 
 response = requests.get(
     url="https://en.wikipedia.org/wiki/List_of_current_heads_of_state_and_government"
