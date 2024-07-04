@@ -1,3 +1,5 @@
+# This python script (which isn't finished of course) aims to extract current heads of state from the wikipedia table containing current heads of state and government
+
 try:
     import requests
     from bs4 import BeautifulSoup
